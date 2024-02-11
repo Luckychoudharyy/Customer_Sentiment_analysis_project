@@ -1,4 +1,4 @@
-# Customer_Sentiment_analysis_project
+# Customer_Sentiment_Analysis_Project
 
 ## Project Overview 
 The British Airways Customer Reviews Analysis project aimed to assess customer sentiment across various aspects of the airline's service. Utilizing data sourced from the open internet, we compiled and structured it within Excel for analysis. Parameters such as food quality, entertainment options, and cabin staff services were examined to derive average ratings. These findings were then visualized using Tableau, providing a clear and concise overview of customer perceptions to inform strategic decision-making within the airline.
@@ -21,12 +21,12 @@ We need to analyze key indicators for our customer review data to gain insights.
 7. Value for money
 
 #### Guiding Questions 
-- Stakeholders anticipate answers to various critical questions through this analysis, including:
+#### Stakeholders anticipate answers to various critical questions through this analysis, including:
 
 1. What are the key drivers of customer satisfaction and dissatisfaction?
 2. How does customer sentiment vary across different aspects of service, such as food quality, entertainment, and cabin staff interactions?
 3. Are there specific trends or patterns in customer feedback that indicate areas for improvement or opportunities for innovation?
-4. How do customer sentiments differ across different demographic groups or customer segments?
+4. How does British Airways' performance compare to competitors in terms of customer perceptions?
 
 ---
 
@@ -52,7 +52,7 @@ The Data was downloaded from Github and orignally sourced from someother open so
    - cross-referenced the dataset with other sources and conducted spot checks to ensure accuracy and completeness, detecting any outliers or discrepancies.
    - Before downloading, reviewed the structure and format of the dataset to ensure it aligned with expectations, looking for inconsistencies or irregularities that might indicate potential data integrity issues.
   
-## Excel VBA code used to combine datasets
+## A. Excel VBA code used to combine datasets
 
 ```VBA
 
@@ -75,13 +75,35 @@ End Sub
 
 ![Screenshot 2024-02-10 233138](https://github.com/Luckychoudharyy/Customer_Sentiment_analysis_project/assets/157785333/94caf06a-75ba-4ee0-ade6-a407b1a7db79)
 
-#### After combining the two datasets, regorous cleaning and Data Manipulation was done and the data was then converted into CSV files to feed it to Tableau.
+## B. To make it look a little presentable
+
+``` VBA
+Sub CleanAndFormatData()
+    Dim rng As Range
+    Dim cell As Range
+
+    ' Set the range to the used range in the active sheet
+    Set rng = ActiveSheet.UsedRange
+
+    ' Loop through each cell in the range
+    For Each cell In rng
+        ' Trim leading and trailing spaces
+        cell.Value = Trim(cell.Value)
+    Next cell
+
+    ' AutoFit columns to the data
+    rng.EntireColumn.AutoFit
+End Sub
+```
+
+
+#### After combining the two datasets, regorous cleaning and Data Manipulation was done and the data was then converted into individual CSV files to feed it to Tableau.
 
 ---
 
 # `Analyse`
 
-### Data Join in Tableau
+### A. Data Join in Tableau
 
 ![Screenshot 2024-02-10 234229](https://github.com/Luckychoudharyy/Customer_Sentiment_analysis_project/assets/157785333/3b857e0f-ac4a-4e0e-8f3f-36165c03fc01)
 
@@ -95,7 +117,7 @@ End Sub
 
 and this list goes long and long...
 
-### Creating Advanced Parameters In Tableau
+### B. Creating Advanced Parameters In Tableau
 
 Advanced Parameters according to the KPIs defined above
 
@@ -116,11 +138,11 @@ END
 ```
 with the use of CASE function fields were defined.
 
-### Filters were defined to get the specific information
+### C. Filters were defined to get the specific information
 
 ![Screenshot 2024-02-11 001116](https://github.com/Luckychoudharyy/Customer_Sentiment_analysis_project/assets/157785333/f659fd59-6871-4318-be8b-fd869427a089)
 
-## Charts Prepared
+## D. Charts Prepared
 
 1. Map
 
@@ -141,6 +163,8 @@ with the use of CASE function fields were defined.
 
 ### From this analysis we got to know a lot of information that the Data kept hidden.
 
+---
+
 # `Share`
 
 Introduction:
@@ -152,6 +176,29 @@ As we transition into the sharing phase of our analysis for the British Airways 
 ![Screenshot 2024-02-11 002926](https://github.com/Luckychoudharyy/Customer_Sentiment_analysis_project/assets/157785333/33e66ae1-d4d3-4c87-acf0-a48210222895)
 
 
+## Key Findings
+- The Overall Primary drivers of Dissatisfaction is the **Entertainment**  and of Satisfaction it is the **Cabin Staff Service**.
+- The Cabin staff interactions receive praise, food quality receives mixed reviews, and entertainment options are generally well-received but criticized for limited variety at times.
+- British Airways generally fares well compared to competitors in terms of customer perceptions.
+- The Families belonging from **China** and **Australia** rated **A319** aircraft's cabin service the highest.
+- **Boeing 777-200** aircraft is rated the highest  and **Boeing 747** is rated the lowest when it comes to the overall value for money.
 
+---
+  
+# `Act`
+## Recommendations 
+Recommendations:
 
+1. Introduce healthier meal options to improve food quality.
+2. Expand entertainment choices for a more varied experience.
+3. Enhance communication during disruptions for better customer support.
+4. Benchmark against competitors for insights on improvement.
+5. Prioritize punctuality and service reliability.
+6. Tailor services to different customer segments.
+7. Invest in staff training for improved interactions.
+8. Utilize positive feedback for marketing and recognition.
+9. Upgrade in-flight dining options for better experience.
+10. Implement a robust monitoring system for continuous improvement.
+
+    
 
